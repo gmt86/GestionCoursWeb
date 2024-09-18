@@ -1,0 +1,46 @@
+﻿@model IEnumerable<GestionCours.Model.Diplome>
+
+@{
+    ViewData["Title"] = "Diplômes";
+}
+
+<h1>Diplômes</h1>
+
+<p>
+    <a asp-action="Create">Nouveau diplôme</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Code)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Niveau)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Code)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Niveau)
+            </td>
+            <td>
+                @Html.ActionLink("Modifier", "Edit", new {id=item.Code}) |                
+                @Html.ActionLink("Supprimer", "Delete", new { id=item.Code })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
