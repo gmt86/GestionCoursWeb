@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace GestionCours.Model
 {
-        
-    internal class AnnuaireContext
+
+    public class AnnuaireContext
     {
         public List<Diplome> Diplomes { get; } = new List<Diplome>();
         public List<Promotion> Promotions { get; } = new List<Promotion>();

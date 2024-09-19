@@ -1,3 +1,5 @@
+using GestionCours.Model;
+
 namespace GestionCoursWeb
 {
     public class Program
@@ -7,6 +9,9 @@ namespace GestionCoursWeb
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+            builder.Services.AddSingleton<AnnuaireContext>();//ce service permet de gérer la persistence de données, 
+                                                             //on laisse .Net se débrouiller à instancier se contexte
+
             builder.Services.AddControllersWithViews();
 
             var app = builder.Build();
