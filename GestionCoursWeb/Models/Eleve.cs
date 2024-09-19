@@ -20,7 +20,7 @@ namespace GestionCours.Model
 
         public string CodePostal { get; set; }  
 
-        public Promotion Promotion { get; set; }
+        public List<Promotion> Promotions { get;  } = new List<Promotion>();
 
         public override string ToString()
         {

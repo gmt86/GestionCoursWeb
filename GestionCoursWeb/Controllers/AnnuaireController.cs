@@ -33,6 +33,7 @@ namespace GestionCoursWeb.Controllers
             }
 
             _context.Diplomes.Add(diplome);
+            _context.SaveChanges();
             return RedirectToAction("Index");
         }
 
@@ -56,7 +57,7 @@ namespace GestionCoursWeb.Controllers
 
             diplomeExiste.Nom= diplome.Nom; 
             diplomeExiste.Niveau = diplome.Niveau;
-
+            _context.SaveChanges();
             return RedirectToAction("Index");
         }
     }
